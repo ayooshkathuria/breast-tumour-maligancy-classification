@@ -1,0 +1,11 @@
+Feature                   Garson Score
+----------------------  --------------
+unif_cell_size               0.2328
+single_epith_cell_size       0.219035
+bare_nuclei                  0.177956
+norm_nucleoli                0.121628
+bland_chrom                  0.0953852
+unif_cell_shape              0.0927131
+mitoses                      0.0262037
+clump_thickness              0.0174487
+marg_adhesion                0.0168308

@@ -1,0 +1,12 @@
+Feature                    Difference from     Accuracy
+                          combined accuracy
+----------------------  -------------------  ----------
+unif_cell_size                      -5.147      91.1765
+unif_cell_shape                     -5.8823     90.4412
+bare_nuclei                         -5.8823     90.4412
+norm_nucleoli                       -6.6176     89.7059
+bland_chrom                         -7.3529     88.9706
+clump_thickness                     -8.8235     87.5
+marg_adhesion                      -12.5        83.8235
+single_epith_cell_size             -13.9706     82.3529
+mitoses                            -25          71.3235
