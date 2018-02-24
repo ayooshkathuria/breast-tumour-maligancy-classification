@@ -61,6 +61,7 @@ appeared in the project.
 * Confusion matrices have been reported for test dataset
 * AUROC has been reported for train dataset. 
 * The reported train accuracy is a average of ten runs of the network, with the best accuracy also reported. 
+* Testing is also done with 4-fold cross validation scheme. The prediction is the average scores of classifiers learned during different folds. 
 
 ## Variable Importances
 Variable importances are an important part of inference and have been measured by 4 ways. 
@@ -95,6 +96,5 @@ network produces the best results most of the times. This includes the problem o
 linked with a better representation of data as input
 * Pruning of network weights based on their statistical significance. 
 * More analysis of the results including reporting recall, precision, and sensitivity analysis
-* Optimising the Neural Network for performance across test datasets of various sizes, and n-fold cross validation. 
-
+* Optimising the Neural Network for performance across test datasets of various sizes. 
 
