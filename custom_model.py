@@ -78,3 +78,12 @@ class custom_model(object):
                 
             prev_valid_score = curr_valid_score
         return curr_valid_score
+    
+    def get_loss(self, dataloader):
+        loss = 0
+        for data in dataloader:
+            x,y = data
+            x,y = Variable(x), Variable(y)
+            outputs = self.model(x) 
+            loss += self.loss_fn(outputs, y).data[0]
+        return loss/float(dataloader.dataset.shape[0])
