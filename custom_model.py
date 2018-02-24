@@ -87,3 +87,30 @@ class custom_model(object):
             outputs = self.model(x) 
             loss += self.loss_fn(outputs, y).data[0]
         return loss/float(dataloader.dataset.shape[0])
+    
+    def metrics(self, testloader, accuracy = True, auc = False, conf_matrix = False):
+        am = meter.AUCMeter()
+        cm = meter.ConfusionMeter(2)
+        correct = 0
+        total = 0
+        for data in testloader:   
+           
+            x,y = data
+        
+            y_ = self.model(Variable(x))
+            _, predicted = torch.max(y_.data, 1)
+          
+            cm.add(y_.data, y)
+            
+            am.add(y_.data[:,1].clone(),y)
+            total += y.size(0)
+            correct += (predicted == y).sum()
+        print (correct, total)
+        if accuracy:
+            print("Accuracy for the model is", round(correct/float(total)*100, 4), correct, "/", total)
+        
+        if auc:
+            print("Area under ROC curve for the given model is", round(am.value()[0],4))
+        
+        if conf_matrix:
+            print ("Confusion Matrix for the given model is\n", cm.value())
