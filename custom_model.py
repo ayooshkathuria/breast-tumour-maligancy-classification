@@ -114,3 +114,21 @@ class custom_model(object):
         
         if conf_matrix:
             print ("Confusion Matrix for the given model is\n", cm.value())
+
+    def metrics_val(self, testloader):
+            am = meter.AUCMeter()
+            cm = meter.ConfusionMeter(2)
+            correct = 0
+            total = 0
+            for data in testloader:   
+                x,y = data
+                y_ = self.model(Variable(x))
+                _, predicted = torch.max(y_.data, 1)
+                cm.add(y_.data, y)
+                am.add(y_.data[:,1].clone(),y)
+                total += y.size(0)
+                correct += (predicted == y).sum()
+            
+            cor_tot = str(correct) + "/" + str(total)
+        
+        return round(correct/float(total)*100, 4), cor_tot, round(am.value()[0],4), cm.value()
