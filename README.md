@@ -5,7 +5,7 @@ Repository containing the code for a neural network to classify breast tumours a
 I've used a neural network to classify the breast tumour cases from UCLA Breast Cancer Dataset. The Neural network has achieved
 a best accuracy of 97.94% corectly classifying 133 out of 136 cases in the test data. 
 
-## Requiremnts 
+## Requirements 
 
 1. PyTorch
 2. Numpy
