@@ -199,4 +199,26 @@ def get_dloader(df, transform = None, batch_size = 30, shuffle = True):
     dataset = WBCDataset(df, transform)
     dataloader = DataLoader(dataset, shuffle= True, batch_size=batch_size, num_workers=4)
     return dataloader
+
+def pca_dataframe(df, n_components):
+    """
+    Returns a dataframe transformed by the first n principal components 
+    of the original data. 
     
+    df: Pandas dataframe containing the data including both the features 
+        as well as the label. The label should be the last column of the 
+        dataframe
+    
+    n_components: number of principal components to transform the matrix
+    
+    Returns = (df.shape[0], n_components + 1) dimensional array containing
+              the data transformed by the first 'n_components' principal 
+              components as well as the class label. 
+    
+    """
+    pca = PCA(n_components=n_components)
+    pca.fit(df[:-1])
+    arr_pca = pca.transform(df)
+    df_pca = pd.DataFrame(arr_pca, columns = ['PCA%i' % i for i in range(n_components)], index = df.index)
+    df_pca[df.columns[-1]] = df[df.columns[-1]]
+    return df_pca
