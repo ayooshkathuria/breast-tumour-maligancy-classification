@@ -1,12 +1,22 @@
 # Breast-Cancer-Malignancy-Classification-and-Inference-using-Neural-Networks
 Repository containing the code for a neural network to classify breast tumours as malignant or benign, and related code to establish inferential results
 
-As of 15th November, 2017 this is an ongoing project which also serves as the minor thesis for my undergraduate CSE degree
 
 I've used a neural network to classify the breast tumour cases from UCLA Breast Cancer Dataset. The Neural network has achieved
 a best accuracy of 97.94% corectly classifying 133 out of 136 cases in the test data. 
 
-This repository is just maintained for purposes of record keeping, and some pieces of code, and documentaton may be incomplete.
+## Requiremnts 
+
+1. PyTorch
+2. Numpy
+3. Matplotlib
+4. Pickle 
+5. Pandas 
+6. scikit-learn 
+7. Tabulate 
+
+* I'll incorporate a requiremnts.txt later.
+
 
 ## Data
 * The data consists of 9 input variables and 1 target variable. All the input variables have discretized values from 1 to 10. 
