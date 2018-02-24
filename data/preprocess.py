@@ -8,7 +8,6 @@ import pickle as pkl
 
 
 
-
 def preprocess(df):
     df['bare_nuclei'].replace({'?': np.nan}, inplace = True)
     df.dropna(inplace=True)
@@ -16,3 +15,12 @@ def preprocess(df):
     df.drop(["id"], axis = 1, inplace=True)
     df["class"] = df["class"].map({2:0, 4:1})
     return df
+
+dataset = pd.read_csv('data.csv')
+
+dataset = preprocess(dataset)
+
+file = open("datasets", "wb")
+
+pkl.dump(dataset, file)
+
