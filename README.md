@@ -17,6 +17,15 @@ a best accuracy of 97.94% corectly classifying 133 out of 136 cases in the test 
 
 * I'll incorporate a requiremnts.txt later.
 
+## Screenshots
+
+Network being trained on a 2-dimensional data containing first two principle axes
+
+![](https://raw.githubusercontent.com/ayooshkathuria/breast-tumour-maligancy-classification/80a7e37c6472a09754b6c249373a470cb317187f/Photos/Training_ex.png)
+
+Sample results from the network trained above
+
+![](https://raw.githubusercontent.com/ayooshkathuria/breast-tumour-maligancy-classification/80a7e37c6472a09754b6c249373a470cb317187f/Photos/Result_ex.png)
 
 ## Data
 * The data consists of 9 input variables and 1 target variable. All the input variables have discretized values from 1 to 10. 
