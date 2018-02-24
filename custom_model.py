@@ -132,3 +132,9 @@ class custom_model(object):
             cor_tot = str(correct) + "/" + str(total)
         
             return round(correct/float(total)*100, 4), cor_tot, round(am.value()[0],4), cm.value()
+        
+    def get_logs(self):
+        return self.losses, \
+            self.losses_test, \
+            self.accus, \
+            self.accus_train
