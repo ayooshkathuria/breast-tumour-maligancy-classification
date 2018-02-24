@@ -1,12 +1,22 @@
 # Breast-Cancer-Malignancy-Classification-and-Inference-using-Neural-Networks
 Repository containing the code for a neural network to classify breast tumours as malignant or benign, and related code to establish inferential results
 
-As of 15th November, 2017 this is an ongoing project which also serves as the minor thesis for my undergraduate CSE degree
 
 I've used a neural network to classify the breast tumour cases from UCLA Breast Cancer Dataset. The Neural network has achieved
 a best accuracy of 97.94% corectly classifying 133 out of 136 cases in the test data. 
 
-This repository is just maintained for purposes of record keeping, and some pieces of code, and documentaton may be incomplete.
+## Requirements 
+
+1. PyTorch
+2. Numpy
+3. Matplotlib
+4. Pickle 
+5. Pandas 
+6. scikit-learn 
+7. Tabulate 
+
+* I'll incorporate a requiremnts.txt later.
+
 
 ## Data
 * The data consists of 9 input variables and 1 target variable. All the input variables have discretized values from 1 to 10. 
@@ -51,6 +61,7 @@ appeared in the project.
 * Confusion matrices have been reported for test dataset
 * AUROC has been reported for train dataset. 
 * The reported train accuracy is a average of ten runs of the network, with the best accuracy also reported. 
+* Testing is also done with 4-fold cross validation scheme. The prediction is the average scores of classifiers learned during different folds. 
 
 ## Variable Importances
 Variable importances are an important part of inference and have been measured by 4 ways. 
@@ -85,6 +96,5 @@ network produces the best results most of the times. This includes the problem o
 linked with a better representation of data as input
 * Pruning of network weights based on their statistical significance. 
 * More analysis of the results including reporting recall, precision, and sensitivity analysis
-* Optimising the Neural Network for performance across test datasets of various sizes, and n-fold cross validation. 
-
+* Optimising the Neural Network for performance across test datasets of various sizes. 
 
