@@ -138,3 +138,18 @@ class custom_model(object):
             self.losses_test, \
             self.accus, \
             self.accus_train
+    
+    def plot(self, logs):
+        losses, losses_test, accus, accus_train = logs
+        steps = range(1, len(losses)+1)
+        
+        plt.plot(steps, losses, color = 'r', label = 'Training Loss')
+        plt.plot(steps, losses_test, color = 'b', label = 'Test Loss')
+        plt.xlabel("Epochs")
+        plt.legend(['Training Loss', 'Test Loss'])
+#            
+        plt.figure(2)
+        plt.xlabel("Epochs")
+        plt.plot(steps, accus, color = 'b', label = 'Train Accuracy')
+        plt.plot(steps, accus_train, color = 'r', label = 'trTrain Accuracy')
+        plt.legend(['Test accuracy', 'Training Accuracy'])
